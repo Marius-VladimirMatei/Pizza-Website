@@ -76,3 +76,18 @@ select, textarea {
     font-size: 20px;
     color: #ffffff;
 }
+
+
+.pizza-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between pizza items */
+}
+.pizza-item {
+    text-align: center;
+    width: 150px; /* Set a fixed width for pizza items */
+}
+.pizza-item img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
