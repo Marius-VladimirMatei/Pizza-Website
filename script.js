@@ -1,16 +1,20 @@
+// Constant for each pizza price
 const pizzaPrices = {
-    "Margerita": 10,
+    "Margarita": 10,
     "Salami": 12,
     "Funghi": 13,
     "Hawaii": 8,
     "Vegetarian": 8
 };
 
+// Constant for different sizes
 const sizeMultipliers = {
     "small": 1,
     "medium": 1.5,
     "large": 2
 };
+
+
 
 function calculateTotal() {
     const selectedPizza = document.querySelector("input[name='pizza']:checked");
@@ -22,12 +26,16 @@ function calculateTotal() {
         return;
     }
 
+        // adds the multiplier when different sizes are selected
     let total = pizzaPrices[selectedPizza.value] * sizeMultipliers[selectedSize];
     
+        // add the extras price in the total and makes it flaot number
     extras.forEach(extra => {
         total += parseFloat(extra.dataset.price);
     });
 
+            // update and assign the new value to total price. toFixed Methond => useful in monetary values,
+            // fixing the price with 2 decimals
     document.getElementById("total-price").textContent = `${total.toFixed(2)} €`;
 }
 
@@ -39,12 +47,15 @@ function showOrderSummary() {
     const remarks = document.getElementById("remarks").value;
 
     if (!selectedPizza) {
-        alert("Please select your prefered pizza!.");
+        alert("Please select your prefered pizza!");
         return;
     }
 
+
+    // backticks ` are used to create template lierals which help to define multi line string
+    //and embed expresions with ${} synthax
     const summary = `
-        <h2>Order sumary</h2>
+        <h2 style="color: white;">Order summary</h2>
         <p>Pizza: ${selectedPizza.value}</p>
         <p>Size: ${selectedSize.options[selectedSize.selectedIndex].text}</p>
         <p>Extras: ${extras.length > 0 ? extras.join(", ") : "None"}</p>
