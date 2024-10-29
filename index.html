@@ -1,53 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Responsivness -->
+    <!-- Responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Pizza Joy</title>
     <link rel="stylesheet" href="styles.css">
+   
 </head>
 <body>
 
-    <!-- Radio type input used for single choice selection-->
+    <!-- Radio type input used for single choice selection -->
     <div class="order-container">
+        <h1>Pizza Joy</h1>
 
-        <h1>Pizza Joy </h1>
 
         <form id="order-form">
-            <h2>Choose your prefered Pizza</h2>
+            <h2>Choose your preferred Pizza</h2>
 
             <div class="pizza-selection">
-                <label><input type="radio" name="pizza" value="Margerita" data-price="10"> Margerita</label>
-                <label><input type="radio" name="pizza" value="Salami" data-price="12"> Salami</label>
-                <label><input type="radio" name="pizza" value="Funghi" data-price="13"> Funghi</label>
-                <label><input type="radio" name="pizza" value="Hawaii" data-price="8"> Hawaii</label>
-                <label><input type="radio" name="pizza" value="Vegetarian" data-price="8"> Vegetarian</label>
+
+
+                <div class="pizza-item">
+                    <label>
+                        <img src="images/margarita.jpg" alt="Margarita Pizza">
+                        <input type="radio" name="pizza" value="Margarita" data-price="10">
+                        <span>Margarita</span>
+                    </label>
+                </div>
+
+                <div class="pizza-item">
+                    <label>
+                        <img src="images/salami.jpg" alt="Salami Pizza">
+                        <input type="radio" name="pizza" value="Salami" data-price="12">
+                        <span>Salami</span>
+                    </label>
+                </div>
+
+                <div class="pizza-item">
+                    <label>
+                        <img src="images/funghi.jpg" alt="Funghi Pizza">
+                        <input type="radio" name="pizza" value="Funghi" data-price="13">
+                        <span>Funghi</span>
+                    </label>
+                </div>
+
+                <div class="pizza-item">
+                    <label>   
+                        <img src="images/hawaii.jpg" alt="Hawaii Pizza">
+                        <input type="radio" name="pizza" value="Hawaii" data-price="8">
+                        <span>Hawaii</span>
+                    </label>
+                </div>
+
+                <div class="pizza-item">
+                    <label> 
+                        <img src="images/vegetarian.jpg" alt="Vegetarian Pizza">
+                        <input type="radio" name="pizza" value="Vegetarian" data-price="8">
+                        <span>Vegetarian</span>
+                    </label>
+                </div>
             </div>
 
-            <h2>Choose your prefered size</h2>
 
-            <!-- Data multiplier used to calculate the price based on size selection -->
+            <!-- Each size is a multiplier of the small one -->
+            <h2>Choose your preferred size</h2>
             <select id="size-select" name="size">
                 <option value="small" data-multiplier="1">Small</option>
                 <option value="medium" data-multiplier="1.5">Medium</option>
                 <option value="large" data-multiplier="2">Big</option>
             </select>
 
+
+
             <h2>Extras</h2>
             <label><input type="checkbox" class="extra" value="extraCheese" data-price="1"> Extra Cheese</label>
             <label><input type="checkbox" class="extra" value="spicy" data-price="0.5"> Spicy</label>
             <label><input type="checkbox" class="extra" value="garlic" data-price="0.5"> Garlic</label>
 
+
+
             <h2>Comments</h2>
             <textarea id="remarks" placeholder="Write here your additional requests: "></textarea>
+
+
 
             <h2>Total price: <span id="total-price">0.00 €</span></h2>
             <button type="button" id="order-button">Order now!</button>
         </form>
     </div>
+
     <div id="order-summary"></div>
     <script src="script.js"></script>
 </body>
