@@ -57,8 +57,8 @@ function showOrderSummary() {
     }
 
 
-    // backticks ` are used to create template lierals which help to define multi line string
-    //and embed expresions with ${} synthax
+    /* backticks ` are used to create template lierals which help to define multi line string
+    and embed expresions with ${} synthax */
     const summary = `
         <h2 style="color: white;">Order summary</h2>
         <p>Pizza: ${selectedPizza.value}</p>
