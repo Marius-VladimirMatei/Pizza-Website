@@ -1,4 +1,4 @@
-// Constant for each pizza price
+// Constant for each pizza price (Object)
 const pizzaPrices = {
     "Margarita": 10,
     "Salami": 12,
@@ -29,7 +29,12 @@ function calculateTotal() {
         // adds the multiplier when different sizes are selected
     let total = pizzaPrices[selectedPizza.value] * sizeMultipliers[selectedSize];
     
-        // add the extras price in the total and makes it flaot number
+        // add the extras price in the total and makes it flaot number => arrow function synthax
+         /*extras.forEach(function(extra) {
+            total += parseFloat(extra.dataset.price);
+    });*/
+
+    //dataset is directly connected to data-price, which is a custom data attribute of the element
     extras.forEach(extra => {
         total += parseFloat(extra.dataset.price);
     });
@@ -75,3 +80,18 @@ document.getElementById("order-button").addEventListener("click", showOrderSumma
 
 // Initial price calculation when user is on the page
 calculateTotal();
+
+
+
+
+/*Array.from converts the NodeList into a regulare JS array using map method
+This effectively adds a space between words in camelCase strings.
+The result is an array where each element is the value of a checked 
+"extra" item, with camelCase converted to spaced words.
+
+ const extras = Array.from(document.querySelectorAll(".extra:checked"))
+                    .map(function(extra) {
+                        return extra.value.replace(/([a-z])([A-Z])/g, '$1 $2');
+                    }); */
+
+
